@@ -88,3 +88,55 @@ body {
     opacity: 0;
   }
 }
+#gameArea {
+  max-width: 100%;
+  padding: 10px;
+}
+
+#topArea {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#reference {
+  text-align: center;
+}
+
+#reference img {
+  width: 120px;
+  border-radius: 10px;
+  opacity: 0.85;
+}
+
+#solvedGrid {
+  display: grid;
+  background: rgba(255,255,255,0.4);
+  padding: 6px;
+  border-radius: 10px;
+}
+
+#unsolvedGrid {
+  margin-top: 15px;
+  display: grid;
+  gap: 6px;
+  justify-content: center;
+}
+
+.slot {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.25);
+  border: 1px dashed #ff4d6d;
+}
+
+.piece {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 4px;
+  touch-action: none;
+}
+
+
