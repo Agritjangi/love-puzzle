@@ -1,23 +1,28 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   background: radial-gradient(circle, #ff9a9e, #fad0c4);
   overflow-x: hidden;
+}
+
+h1, h3 {
+  text-align: center;
+  color: white;
 }
 
 #intro {
   position: fixed;
   inset: 0;
-  background: #000;
-  color: white;
+  background: black;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 1000;
 }
 
 .introText {
   text-align: center;
+  color: white;
   animation: fadeIn 2s ease;
 }
 
@@ -28,6 +33,7 @@ body {
   border: none;
   background: #ff4d6d;
   color: white;
+  font-size: 16px;
 }
 
 @keyframes fadeIn {
@@ -36,61 +42,7 @@ body {
 }
 
 #game {
-  text-align: center;
-  padding: 20px;
-}
-
-#levels button {
-  margin: 5px;
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: none;
-  background: #ff4d6d;
-  color: white;
-}
-
-#levels button.locked {
-  opacity: 0.4;
-}
-
-#puzzleBoard {
-  margin: 20px auto;
-  display: grid;
-  gap: 2px;
-  width: fit-content;
-}
-
-.piece {
-  width: 80px;
-  height: 80px;
-  border-radius: 6px;
-  background-size: cover;
-  touch-action: none;
-  transition: transform 0.2s ease;
-}
-
-.piece:active {
-  transform: scale(1.05);
-}
-
-.heart {
-  position: fixed;
-  bottom: -40px;
-  width: 30px;
-  height: 30px;
-  background: url("assets/ui/heart.png") center/cover;
-  animation: float 6s linear;
-}
-
-@keyframes float {
-  to {
-    transform: translateY(-120vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-#gameArea {
-  max-width: 100%;
-  padding: 10px;
+  padding: 15px;
 }
 
 #topArea {
@@ -98,10 +50,6 @@ body {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-}
-
-#reference {
-  text-align: center;
 }
 
 #reference img {
@@ -112,8 +60,8 @@ body {
 
 #solvedGrid {
   display: grid;
-  background: rgba(255,255,255,0.4);
   padding: 6px;
+  background: rgba(255,255,255,0.35);
   border-radius: 10px;
 }
 
@@ -127,7 +75,7 @@ body {
 .slot {
   width: 40px;
   height: 40px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.3);
   border: 1px dashed #ff4d6d;
 }
 
@@ -138,5 +86,3 @@ body {
   border-radius: 4px;
   touch-action: none;
 }
-
-
