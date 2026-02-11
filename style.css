@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: radial-gradient(circle, #ff9a9e, #fad0c4);
-  overflow-x: hidden;
 }
 
 h1, h3 {
@@ -10,6 +9,7 @@ h1, h3 {
   color: white;
 }
 
+/* Intro */
 #intro {
   position: fixed;
   inset: 0;
@@ -21,9 +21,8 @@ h1, h3 {
 }
 
 .introText {
-  text-align: center;
   color: white;
-  animation: fadeIn 2s ease;
+  text-align: center;
 }
 
 .introText button {
@@ -33,18 +32,33 @@ h1, h3 {
   border: none;
   background: #ff4d6d;
   color: white;
-  font-size: 16px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+/* Game */
 #game {
   padding: 15px;
 }
 
+/* Levels */
+#levels {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#levels button {
+  margin: 4px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+}
+
+#levels button.locked {
+  opacity: 0.4;
+}
+
+/* Layout */
 #topArea {
   display: flex;
   justify-content: center;
@@ -58,6 +72,7 @@ h1, h3 {
   opacity: 0.85;
 }
 
+/* Solved Grid */
 #solvedGrid {
   display: grid;
   padding: 6px;
@@ -65,6 +80,7 @@ h1, h3 {
   border-radius: 10px;
 }
 
+/* Unsolved */
 #unsolvedGrid {
   margin-top: 15px;
   display: grid;
@@ -72,17 +88,56 @@ h1, h3 {
   justify-content: center;
 }
 
+/* Slot */
 .slot {
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.25);
   border: 1px dashed #ff4d6d;
 }
 
+/* Glow on correct slot */
+.slot.glow {
+  box-shadow: 0 0 10px #ff4d6d;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+/* Piece */
 .piece {
-  width: 40px;
-  height: 40px;
   background-size: cover;
   border-radius: 4px;
-  touch-action: none;
+  cursor: pointer;
+}
+
+.piece.selected {
+  outline: 3px solid #ff4d6d;
+}
+
+/* Note overlay */
+.noteOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.noteBox {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 300px;
+  text-align: center;
 }
